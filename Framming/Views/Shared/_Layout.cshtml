@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framming - @ViewBag.Title</title>
+    <link rel="icon" href="~/Content/images/logo-framming.png" type="image/x-icon">
+    <link />
+    @Styles.Render("~/Content/styles/" + ViewBag.Style)
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

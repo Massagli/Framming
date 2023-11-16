@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Ver Postagem";
+    ViewBag.Style = "verpostPage.css";
+}
+
+<body>
+    <main>
+        <div class="container_pesquisa">
+            <button id="button_home">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_home.png">
+                </a>
+            </button>
+
+            <button id="button_notificacao">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_notificacao.png">
+                </a>
+
+            </button>
+
+            <div id="div_identificacao">
+                <img src="~/Content/images/Chagasperfil.png">
+                <p>Beatriz Chagas</p>
+                <div id="div_indifica_role">
+                    <p>Linda</p>
+                </div>
+            </div>
+
+            <div id="divBusca">
+                <input type="text" id="txtBusca" img src="~/Content/images/lupapesquisa.png">
+                <img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar">
+            </div>
+        </div>
+
+        <div class="container_menu_content">
+            <div class="container_menu">
+                <nav class="menu">
+                    <img id="framming_logo_menu" src="~/Content/images/framminglogo.png" />
+                    <ul>
+                        <div class="menu_container">
+                            <button id="button_cliente_menu">
+                        <li><a href="ferqyfq.html"><img src="~/Content/images/icon_cliente.png"></a></li></button>
+                        <button id="button_mensagens_menu">
+                        <li><a href="#"><img src="~/Content/images/icon_mensagens.png"></a></li></button>
+                        <button id="button_identificacao_menu">
+                        <li><a href="#"><img src="~/Content/images/icon_identificacao.png"></a></li></button>
+                        <button id="button_theater_menu">
+                        <li><a href="#"><img src="~/Content/images/theater.png"></a></li></button>
+            </div>
+            </ul>
+            <ul>
+                <div class="buttons_sair_configuracao">
+                    <button id="button_sair_menu">
+                <li><a href="#"><img src="~/Content/images/icon_saida.png"></a></li></button>
+                <button id="button_configuracao_menu">
+                <li><a href="#"><img src="~/Content/images/configuracao.png"></a></li></button>
+        </div>
+        </ul>
+        </nav>
+
+        </div>
+        <div class="container_content">
+            <div class="container_main">
+                <div class="codigo_cinema">
+                    <img id="foto_codigo_func" src="~/Content/images/icon_identifica_func.png" />
+                    <p id="cod_cinema_p">Código Cinema:</p>
+                    <p id="cod_nome_p">Nome:</p>
+                    <p id="cod_email_p">Email:</p>
+                    <p id="cod_senha_p">Senha:</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="divBuscaPostagem">
+            <input type="text" id="txtBuscaPostagem" onkeydown="verificarEnter(event)">
+            <img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar">
+        </div>
+        <div id="resultado_pesquisa">
+
+            <style> /*fé na mãe adriel ellipse lipe!*/
+                #resultado_pesquisa {
+                    display: none;
+                    margin-top: 133px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                }
+            </style>
+
+            <div class="pink_line">
+                <div class="rotulos_pesquisa">
+                </div>
+
+            </div>
+            <p id="data_post">Data:</p>
+            <p id="denuncia_post">Denúncias:</p>
+            <p id="filme_post">Filme:</p>
+            <p id="post_result">
+                Lorem Ipsum is simply dummy text of
+                the printing and typesetting industry. Lorem Ipsum hasa
+                been the industry's standard dummy text ever since the
+                1500s, when an
+            </p>
+
+            <button id="excluir_post">Excluir Postagem</button>
+        </div>
+        <script>
+            function verificarEnter(event) {
+                if (event.keyCode === 13) {
+       
+                    var resultadoPesquisaDiv = document.getElementById("resultado_pesquisa");
+                    var txtBuscaPostagem = document.getElementById("txtBuscaPostagem").value;
+
+                    if (txtBuscaPostagem.trim() !== "") {
+   
+                        resultadoPesquisaDiv.style.display = "block";
+                    } else {
+
+                        resultadoPesquisaDiv.style.display = "none";
+                    }
+                }
+            }
+        </script>
+
+    </main>
+</body>

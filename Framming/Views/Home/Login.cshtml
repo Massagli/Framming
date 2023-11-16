@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Login";
+    ViewBag.Style = "loginPage.css";
+}
+
+<main class="main">
+    <section class="main__card-section">
+        <section class="card-section__welcome-section">
+            <header class="welcome-section__header">
+                <img src="~/Content/images/logo-framming.png" alt="Framming Logo" class="header__logo" />
+                <div class="welcome-section__title-div">
+                    <h1 class="title-div__title">Bem-Vindo</h1>
+                    <h2 class="title-div__subtitle">Enquadrando Emoções</h2>
+                </div>
+            </header>
+            <img src="~/Content/images/account-image.png" alt="Account Image" class="welcome-section__image" />
+        </section>
+        <section class="card-section__account-section">
+            <header class="account-section__header">
+                <div class="header__account-div">
+                    <a href="/Login" rel="noreferrer" class="account-div__link">Login</a>
+                    <a href="/Register" rel="noreferrer" class="account-div__link">Criar Conta</a>
+                </div>
+            </header>
+            <form class="account-section__form" action="/Login" method="post">
+                <div class="form__input-div">
+                    <label for="inputEmail" class="input-div__label">Email</label>
+                    <input type="email" class="input-div__input" id="inputEmail" placeholder="example@email.com">
+                </div>
+                <div class="form__input-div">
+                    <label for="inputPassword" class="input-div__label">Senha</label>
+                    <input type="password" class="input-div__input" id="inputPassword" placeholder="********">
+                    <label for="inputPassword" class="input-div__label-see-password"><img src="~/Content/images/see-password-icon.png" alt="See Password Icon" /></label>
+                </div>
+                <div class="form__password-info-div">
+                    <div class="password-info-div__remember-div">
+                        <input type="checkbox" class="password-info-div__remember-input" id="remember-me">
+                        <label for="remember-me" class="password-info-div__remember-label">Lembre de mim</label>
+                    </div>
+                    <a href="#" class="password-info-div__forgot-link">Esqueceu sua senha?</a>
+                </div>
+                <button type="submit" class="form__submit">Login</button>
+                <p class="form__no-account-paragraph">
+                    Não tem uma conta? <a href="/Register" class="no-account-paragraph__link">Registre-se!</a>
+                </p>
+            </form>
+        </section>
+    </section>
+</main>
+
+@section scripts {
+
+    <script>
+        const btnSeePassword = document.querySelector('label.input-div__label-see-password');
+        const inputPassword = document.querySelector('#inputPassword');
+
+        const seePassword = () => {
+            if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+            } else {
+                inputPassword.type = "password";
+            }
+        }
+
+        btnSeePassword.addEventListener("click", seePassword);
+    </script>
+
+}

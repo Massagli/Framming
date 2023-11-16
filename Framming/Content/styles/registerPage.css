@@ -1,0 +1,308 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+/* Variables */
+:root {
+  --red-pink: #FF6666;
+  --red: #E34B4B;
+  --white: #FFFFFF; 
+  --black: #000000; 
+  --black-gray: #434343;
+  --gray: #DEDEDE;
+  --light-gray: #F0F0F0;
+}
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    background: var(--gray) url(../../Content/images/account-background.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main__card-section {
+    background-color: var(--light-gray);
+    width: 60em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 3em;
+    border-radius: 18px;
+    box-shadow: -5px 10px 20px 10px rgba(0, 0, 0, 0.13);
+    margin: 2em 0em;
+    padding: 1em;
+}
+/*Welcome section - left side of section*/
+.section__welcome-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-section__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -.8em;
+}
+.header__logo {
+    width: 4em;
+    height: 4em; 
+    margin-top: 0.3em;
+}
+.welcome-section__title-div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    color: var(--black-gray);
+    font-weight: 800;
+}
+.title-div__title {
+    font-size: 2em;
+    color: var(--black);
+}
+.title-div__subtitle {
+    font-size: 1em;
+    font-weight: 800;
+}
+.welcome-section__image {
+    width: 100%;
+    min-width: 20em;
+    max-width: 24em;
+}
+/*Account section - right side of section*/
+.card-section__account-section{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.account-section__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__account-div {
+    width: 22em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+    gap: -0.5em;
+    border-radius: 1.2em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+.account-div__link {
+    text-decoration: none;
+    color: var(--black-gray);
+    width: 11em;
+    height: 3em;
+    border-radius: 1.2em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transition: 300ms;
+}
+.account-div__link:hover {
+    color: var(--black);
+}
+.account-div__link:nth-child(2) {
+    color: var(--light-gray);
+    background-color: var(--red-pink);
+    border-radius: 0.2em 1.2em;
+}
+.account-div__link:nth-child(2):hover {
+    color: var(--white);
+    background-color: var(--red); 
+}
+.account-section__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .8em;
+}
+.form__input-div {
+    background-color: var(--gray);
+    width: 22em;
+    height: 4em;
+    position: relative;
+    border-radius: .5em;
+    padding-left: 1em;
+}
+.input-div__label {
+    position: absolute;
+    left: 4.6em;
+    top: .9em;
+    color: var(--black);
+    font-weight: 800;
+    font-size: .8em;
+}
+.input-div__input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: var(--black-gray);
+    font-weight: 600;
+    background-color: var(--gray); 
+    padding-left: 3em;
+    padding-right: 1em;
+    padding-top: 1.2em;
+    font-size: .9em;
+}
+#inputName {
+    background: url(../../Content/images/info-user-icon.png) no-repeat left;
+}
+#inputUsername {
+    background: url(../../Content/images/user-icon.png) no-repeat left;
+}
+#inputEmail {
+    background: url(../../Content/images/email-icon.png) no-repeat left;
+}
+#inputPassword {
+    background: url(../../Content/images/password-icon.png) no-repeat left;
+}
+#inputConfirmPassword {
+    background: url(../../Content/images/password-icon.png) no-repeat left;
+}
+.input-div__label-see-password {
+    position: absolute;
+    right: 1em;
+    top: 1.3em;
+}
+.input-div__label-see-password:hover {
+    cursor: pointer;
+}
+input::-ms-reveal { /*Desabilita o "ver mais" do edge*/
+    display:none;
+}
+.form__password-info-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+    gap: 7em;
+}
+.password-info-div__remember-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    transition: 300ms;
+    font-weight: 600;
+}
+.password-info-div__remember-label {
+    color: var(--black-gray);
+}
+.password-info-div__remember-label:hover {
+    cursor: pointer;
+    color: var(--black);
+}
+.password-info-div__remember-input {
+    width: 1em;
+    border: none;
+    outline: none;
+    accent-color: var(--red-pink);
+    caret-color: var(--white);  
+}
+.password-info-div__remember-input:hover {
+    caret-color: var(--white);  
+    cursor: pointer;
+}
+.password-info-div__forgot-link {
+    color: var(--red-pink);
+    text-decoration: none;
+    transition: 300ms;
+    font-weight: 600;
+}
+.password-info-div__forgot-link:hover {
+    color: var(--red);
+}
+.form__submit {
+    width: 18em;
+    height: 3em;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: var(--light-gray);
+    background-color: var(--red-pink);
+    transition: 300ms;
+    border: none;
+    outline: none;
+    border-radius: .5em;
+    margin-top: .8em;
+}
+.form__submit:hover {
+    color: var(--white);
+    background-color: var(--red);
+    cursor: pointer;
+}
+.form__no-account-paragraph {
+    font-size: .8em;
+    color: var(--black-gray);
+    font-weight: 600;
+}
+.no-account-paragraph__link {
+    color: var(--red-pink);
+    text-decoration: none;
+    transition: 300ms;
+}
+.no-account-paragraph__link:hover {
+    color: var(--red);
+}
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 920px) {
+    .header__logo {
+        width: 4em;
+        height: 4em;
+        margin-top: 3em;
+    }
+    .welcome-section__header {
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+    .main__card-section {
+        height: auto;
+    } 
+    .welcome-section__image {
+        display: none;
+    }
+    .card-section__welcome-section {
+        margin-top: -1em;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    .header__logo {
+        margin-top: 3em;
+    }
+    .main__card-section {
+        padding: 0em;
+        gap: 1em;
+    }
+    
+}
