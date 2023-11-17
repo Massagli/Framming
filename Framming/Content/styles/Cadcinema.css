@@ -229,7 +229,7 @@ body {
     #button_mensagens_menu img {
         width: 60px;
         height: 65px;
-       
+        opacity: 0.51;
     }
 
 
@@ -266,7 +266,7 @@ body {
     #button_theater_menu img {
         width: 45px;
         height: 45px;
-        opacity: 0.51;
+       
     }
 
 .buttons_sair_configuracao {
@@ -670,149 +670,7 @@ body {
     grid-column: 11;
     margin-left: 58px;
 }
-    #divBuscaPostagem {
-        border-radius: 65px;
-        border: none;
-        background: #E9E9E9;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        width: 769px;
-        height: 50px;
-        padding-top: -16px;
-        grid-column: 9;
-        grid-row: 2;
-        margin-left: -801px;
-        margin-top: 46px;
-    }
 
-    #divBuscaPostagem button {
-        background: transparent;
-        border: none;
-        font-size: 0;
-        margin-left: 30px;
-        grid-row: 1;
-        width: 100px;
-        height: 40px;
-    }
-
-    #divBuscaPostagem img {
-        margin-top: 12px;
-        margin-left: 194px;
-    }
-
-#txtBuscaPostagem {
-    float: left;
-    background-color: transparent;
-    padding-left: 8px;
-    font-style: italic;
-    font-size: 18px;
-    border: none;
-    height: 39px;
-    width: 512px;
-    outline: 3px;
-}
-
-#resultado_pesquisa {
-    width: 763px;
-    height: 448px;
-    display: none;
-    border-radius: 13px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
-    margin-top: 141px;
-    margin-left: 623px;
-}
-.pink_line {
-    width: 703px;
-    height: 2px;
-    border-radius: 28px;
-    background: #E9E9E9;
-    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 81px;
-    background: #F66;
-    margin-top: 35px;
-    margin-left: 33px;
-}
-
-#excluir_post {
-    width: 287px;
-    height: 49px;
-    border-radius: 6px;
-    background: rgba(255, 102, 102, 0.45);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-top: 47px;
-    margin-left: 29px;
-    border: none;
-    color: #FFF;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 118.5%;
-    cursor: pointer;
-}
-
-
-    #excluir_post:hover {
-        background-color: #FF6666;
-    }
-
-#data_post {
-    color: #707070;
-    text-align: left;
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 118.5%;
-    margin-top: 21px;
-    margin-left: 34px;
-}
-
-#denuncia_post {
-    color: #707070;
-    text-align: left;
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 118.5%;
-    margin-top: -7px;
-    margin-left: 34px;
-}
-
-#filme_post {
-    color: #707070;
-    text-align: left;
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 118.5%;
-    margin-top: -6px;
-    margin-left: 34px;
-}
-
-#post_result {
-    color: #585858;
-    text-align: justify;
-    font-family: Poppins;
-    font-size: 23px;
-    margin-left: 35px;
-    margin-right: 39px;
-    font-weight: 600;
-    line-height: 118.5%;
-}
-
-#minhaDiv {
-    width: 763px;
-    height: 448px;
-    border-radius: 13px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
-    margin-top: 141px;
-    margin-left: 623px;
-}
 
 @media screen and (min-width:961px) {
     #foto_cadastro_func {
@@ -880,7 +738,7 @@ body {
     #codigo_func, #nome_func, #email_func, #senha_func, #confirma_senha_func {
         width: 425px;
         grid-column: 5;
-        margin-top: -38px;
+        margin-top: 21px;
         margin-left: 17px;
     }
 
@@ -891,14 +749,13 @@ body {
     #codigo_func_p {
         font-size: 16px;
         grid-column: 6;
-        margin-left: -95px;
-        margin-top: -2px;
+        margin-left: -125px;
+        margin-top: 55px;
     }
-
     #codigo_email_p {
         grid-column: 5;
-        margin-left: -45px;
-        margin-top: 0px;
+        margin-left: 2px;
+        margin-top: 58px;
         font-size: 16px;
     }
 
@@ -906,33 +763,20 @@ body {
         grid-column: 6;
         font-size: 16px;
         margin-left: -146px;
-        margin-top: 1px;
+        margin-top: 59px;
     }
 
-    #codigo_senha_p {
-        margin-left: -146px;
-        margin-top: 2px;
-        font-size: 16px;
-    }
-
-
-    #codigo_Confime_p {
-        margin-left: -93px;
-        margin-top: -3px;
-        font-size: 16px;
-    }
 
     #foto_cadastro_func {
         grid-column: 10;
-        margin-left: 68px;
+        margin-left: 141px;
     }
 
     #cadastre_func {
         grid-column: 10;
-        margin-left: 99px;
-        margin-top: 33px;
+        margin-left: 105px;
+        margin-top: 24px;
     }
-
     .container_content {
         margin-left: -38px;
     }
@@ -946,41 +790,31 @@ body {
     }
 
     #codigo_func_img {
-        margin-top: 89px;
-        margin-left: -78px;
-    }
-
-    #nome_func_img {
-        margin-top: 177px;
+        margin-top: 149px;
         margin-left: -76px;
     }
 
+    #nome_func_img {
+        margin-top: 235px;
+        margin-left: -75px;
+    }
+
     #email_func_img {
-        margin-top: 264px;
-        margin-left: -176px;
-    }
-
-    #senha_func_img {
-        margin-top: 351px;
-        margin-left: -79px;
-    }
-
-    #confirma_senha_func_img {
-        margin-top: 465px;
-        margin-left: -178px;
+        margin-top: 321px;
+        margin-left: -177px;
     }
 
     #imagePreview {
         width: 218px;
         height: 218px;
         margin-left: 317px;
-        margin-top: -14px;
+        margin-top: 0px;
     }
 
     #codigo_func_result {
         font-size: 16px;
         grid-column: 5;
-        margin-left: -159px;
+        margin-left: -209px;
         margin-top: 264px;
     }
 
@@ -998,12 +832,6 @@ body {
         margin-top: 292px;
     }
 
-    #codigo_senha_result {
-        font-size: 16px;
-        grid-column: 5;
-        margin-left: -253px;
-        margin-top: 306px;
-    }
 }
 
 @media screen and (min-width:723.33px) {

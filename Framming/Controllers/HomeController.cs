@@ -55,5 +55,10 @@ namespace Framming.Controllers
 
             return View();
         }
+        public ActionResult Cad_cinema()
+        {
+
+            return View();
+        }
     }
 }

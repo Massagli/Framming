@@ -1,8 +1,9 @@
-@{
-    ViewBag.Title = "Cadastro de Funcionário";
-    ViewBag.Style = "cadfuncPage.css";
+ï»¿@{
+    ViewBag.Title = "Cadastro de Cinema";
+    ViewBag.Style = "Cadcinema.css";
 
 }
+
 <body>
     <main>
         <div class="container_pesquisa">
@@ -47,7 +48,7 @@
                         <li><a href="#"><img src="~/Content/images/icon_identificacao.png"></a></li></button>
                         <button id="button_theater_menu">
                         <li><a href="Cad_cinema"><img src="~/Content/images/theater.png"></a></li></button>
-</div>
+            </div>
             </ul>
             <ul>
                 <div class="buttons_sair_configuracao">
@@ -64,76 +65,30 @@
             <div class="container_main">
                 <div class="codigo_cinema">
                     <img id="foto_codigo_func" src="~/Content/images/icon_identifica_func.png" />
-                    <p id="cod_cinema_p">Código Cinema:</p>
+                    <p id="cod_cinema_p">Localidade:</p>
                     <p id="cod_nome_p">Nome:</p>
-                    <p id="cod_email_p">Email:</p>
-                    <p id="cod_senha_p">Senha:</p>
+                    <p id="cod_email_p">Salas:</p>
+
                 </div>
 
-                <p id="codigo_cadastro_func_p">Cadastro de Funcionário</p>
+                <p id="codigo_cadastro_func_p">Cadastro de cinemas</p>
 
 
-                <p id="codigo_func_p">Código do Cinema:</p>
+                <p id="codigo_func_p">Localidade:</p>
                 <p id="codigo_func_result"></p>
-                <input id="codigo_func" type="text" placeholder="0000">
-                <img id="codigo_func_img" src="~/Content/images/icon_codigo.png" width="35px">
+                <input id="codigo_func" type="text" placeholder="Av. GuimarÃ£es, NÂ°12">
+                <img id="codigo_func_img" src="~/Content/images/icon_local.png" width="35px">
 
                 <p id="codigo_nome_p">Nome:</p>
                 <p id="codigo_nome_result"></p>
-                <input id="nome_func" type="text" placeholder="Nome" />
+                <input id="nome_func" type="text" placeholder="Uci Cinemas" />
                 <img id="nome_func_img" src="~/Content/images/icon_theater.png" width="35px">
 
-                <p id="codigo_email_p">Email:</p>
+                <p id="codigo_email_p">NÃºmero de Salas :</p>
                 <p id="codigo_email_result"></p>
-                <input id="email_func" type="text" placeholder="exemplo@email.com" />
-                <img id="email_func_img" src="~/Content/images/icon_email.png" width="35px">
+                <input id="email_func" type="text" placeholder="10" />
+                <img id="email_func_img" src="~/Content/images/icon_numsalas.png" width="35px">
 
-                <p id="codigo_senha_p">Senha:</p>
-                <p id="codigo_senha_result"></p>
-                <input id="senha_func" type="text" placeholder="*******" />
-                <img id="senha_func_img" src="~/Content/images/icon_chave.png" width="35px">
-
-                <p id="codigo_Confime_p">Confirme a Senha:</p>
-                <input id="confirma_senha_func" type="text" id="txtBusca" img src="img/lupapesquisa.png" placeholder="*******" />
-                <img id="confirma_senha_func_img" src="~/Content/images/icon_chave.png" width="35px">
-
-
-
-                <button onclick="atualizarDiv()" id="cadastre_func">Cadastrar</button>
-                <script>
-                    function atualizarDiv() {
-                     
-                        atualizarCampo('nome_func', 'codigo_nome_result', 'codigo_nome_p');
-
-                     
-                        atualizarCampo('email_func', 'codigo_email_result', 'codigo_email_p');
-
-                     
-                        atualizarCampo('senha_func', 'codigo_senha_result', 'codigo_senha_p');
-
-                        atualizarCampo('codigo_func', 'codigo_func_result', 'codigo_func_p');
-                    }
-
-                    function atualizarCampo(idCampo, idDivResultado, idParagrafo) {
-                      
-                        var valorInput = document.getElementById(idCampo).value;
-
-                        var novoParagrafo = document.createElement('p');
-
-          
-                        novoParagrafo.textContent = valorInput;
-
-           
-                        var divResultado = document.getElementById(idDivResultado);
-
-                     
-                        divResultado.innerHTML = '';
-                        divResultado.appendChild(novoParagrafo);
-
-           
-                        document.getElementById(idCampo).value = '';
-                    }
-                </script>
 
 
                 <input type="file" id="fileInput" style="display: none;" accept="image/*" />
@@ -154,7 +109,7 @@
                                 const reader = new FileReader();
 
                                 reader.onload = function (event) {
-                                    document.getElementById('foto_codigo_func','imagePreview').setAttribute('src', event.target.result);
+                                    document.getElementById('foto_codigo_func', 'imagePreview').setAttribute('src', event.target.result);
                                 };
 
                                 reader.readAsDataURL(file);
@@ -162,12 +117,41 @@
                         });
                     </script>
 
+                    <button onclick="atualizarDiv()" id="cadastre_func">Cadastrar</button>
+                    <script>
+                        function atualizarDiv() {
+
+                            atualizarCampo('nome_func', 'codigo_nome_result', 'codigo_nome_p');
+
+                            atualizarCampo('email_func', 'codigo_email_result', 'codigo_email_p');
+
+                            atualizarCampo('codigo_func', 'codigo_func_result', 'codigo_func_p');
+                        }
+
+                        function atualizarCampo(idCampo, idDivResultado, idParagrafo) {
+
+                            var valorInput = document.getElementById(idCampo).value;
+
+                            var novoParagrafo = document.createElement('p');
 
 
+                            novoParagrafo.textContent = valorInput;
+
+
+                            var divResultado = document.getElementById(idDivResultado);
+
+
+                            divResultado.innerHTML = '';
+                            divResultado.appendChild(novoParagrafo);
+
+
+                            document.getElementById(idCampo).value = '';
+                        }
+                    </script>
                 </div>
         </div>
-      
+
 
     </main>
 
-}
+    }
