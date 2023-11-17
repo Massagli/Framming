@@ -128,14 +128,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\styles\AdministradorPage.css" />
+    <Content Include="Content\styles\AlterarcinePage.css" />
     <Content Include="Content\styles\Cadcinema.css" />
     <Content Include="Content\styles\cadfuncaltPage.css" />
     <Content Include="Content\styles\cadfuncPage.css" />
+    <Content Include="Content\styles\UsuariosPage.css" />
     <Content Include="Content\styles\verpostPage.css" />
     <Content Include="Views\Home\cad_func.cshtml" />
     <Content Include="Views\Home\administrador.cshtml" />
     <Content Include="Views\Home\alterar_cad.cshtml" />
     <Content Include="Views\Home\Cad_cinema.cshtml" />
+    <Content Include="Views\Home\Alterar_cinema.cshtml" />
     <None Include="Views\Home\Register.cshtml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -190,6 +193,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Verpostadm.cshtml" />
+    <Content Include="Views\Home\Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

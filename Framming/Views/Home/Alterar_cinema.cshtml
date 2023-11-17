@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Alterar cadastro de Cinema";
+    ViewBag.Style = "AlterarcinePage.css";
+
+}
+
+<body>
+    <main>
+        <div class="container_pesquisa">
+            <button id="button_home">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_home.png">
+                </a>
+            </button>
+
+            <button id="button_notificacao">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_notificacao.png">
+                </a>
+
+            </button>
+
+            <div id="div_identificacao">
+                <img src="~/Content/images/Chagasperfil.png">
+                <p>Beatriz Chagas</p>
+                <div id="div_indifica_role">
+                    <p>Linda</p>
+                </div>
+            </div>
+
+            <div id="divBusca">
+                <input type="text" id="txtBusca" img src="~/Content/images/lupapesquisa.png">
+                <img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar">
+            </div>
+        </div>
+
+        <div class="container_menu_content">
+            <div class="container_menu">
+                <nav class="menu">
+                    <img id="framming_logo_menu" src="~/Content/images/framminglogo.png" />
+                    <ul>
+                        <div class="menu_container">
+                            <button id="button_cliente_menu">
+                        <li><a href="cad_func"><img src="~/Content/images/icon_cliente.png"></a></li></button>
+                        <button id="button_mensagens_menu">
+                        <li><a href="Verpostadm"><img src="~/Content/images/icon_mensagens.png"></a></li></button>
+                        <button id="button_identificacao_menu">
+                        <li><a href="#"><img src="~/Content/images/icon_identificacao.png"></a></li></button>
+                        <button id="button_theater_menu">
+                        <li><a href="Cad_cinema"><img src="~/Content/images/theater.png"></a></li></button>
+            </div>
+            </ul>
+            <ul>
+                <div class="buttons_sair_configuracao">
+                    <button id="button_sair_menu">
+                <li><a href="#"><img src="~/Content/images/icon_saida.png"></a></li></button>
+                <button id="button_configuracao_menu">
+                <li><a href="#"><img src="~/Content/images/configuracao.png"></a></li></button>
+        </div>
+        </ul>
+        </nav>
+
+        </div>
+        <div class="container_content">
+            <div class="container_main">
+                <div class="codigo_cinema">
+                    <img id="foto_codigo_func" src="~/Content/images/icon_identifica_func.png" />
+                    <p id="cod_cinema_p">Localidade:</p>
+                    <p id="cod_nome_p">Nome:</p>
+                    <p id="cod_email_p">Salas:</p>
+
+                </div>
+
+                <p id="codigo_cadastro_func_p">Alterar cinema</p>
+
+
+                <p id="codigo_func_p">Localidade:</p>
+                <p id="codigo_func_result"></p>
+                <input id="codigo_func" type="text" placeholder="Av. Guimarães, N°12">
+                <img id="codigo_func_img" src="~/Content/images/icon_local.png" width="35px">
+
+                <p id="codigo_nome_p">Nome:</p>
+                <p id="codigo_nome_result"></p>
+                <input id="nome_func" type="text" placeholder="Uci Cinemas" />
+                <img id="nome_func_img" src="~/Content/images/icon_theater.png" width="35px">
+
+                <p id="codigo_email_p">Número de Salas :</p>
+                <p id="codigo_email_result"></p>
+                <input id="email_func" type="text" placeholder="10" />
+                <img id="email_func_img" src="~/Content/images/icon_numsalas.png" width="35px">
+
+
+
+                <input type="file" id="fileInput" style="display: none;" accept="image/*" />
+                <button id="choose_img" onclick="openFileExplorer()" style="background: none; border: none; cursor: pointer;">
+                    <img src="~/Content/images/foto_cadastro_func.png" id="imagePreview" />
+                </button>
+
+                @section scripts {
+                    <script>
+                        function openFileExplorer() {
+                            document.getElementById('fileInput').click();
+                        }
+
+                        document.getElementById('fileInput').addEventListener('change', function () {
+                            const file = this.files[0];
+
+                            if (file) {
+                                const reader = new FileReader();
+
+                                reader.onload = function (event) {
+                                    document.getElementById('foto_codigo_func', 'imagePreview').setAttribute('src', event.target.result);
+                                };
+
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    </script>
+
+                    <button onclick="atualizarDiv()" id="cadastre_func">Alterar</button>
+                    <script>
+                        function atualizarDiv() {
+
+                            atualizarCampo('nome_func', 'codigo_nome_result', 'codigo_nome_p');
+
+                            atualizarCampo('email_func', 'codigo_email_result', 'codigo_email_p');
+
+                            atualizarCampo('codigo_func', 'codigo_func_result', 'codigo_func_p');
+                        }
+
+                        function atualizarCampo(idCampo, idDivResultado, idParagrafo) {
+
+                            var valorInput = document.getElementById(idCampo).value;
+
+                            var novoParagrafo = document.createElement('p');
+
+
+                            novoParagrafo.textContent = valorInput;
+
+
+                            var divResultado = document.getElementById(idDivResultado);
+
+
+                            divResultado.innerHTML = '';
+                            divResultado.appendChild(novoParagrafo);
+
+
+                            document.getElementById(idCampo).value = '';
+                        }
+                    </script>
+                </div>
+            </div>
+
+
+        </main>
+
+  }

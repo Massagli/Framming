@@ -60,5 +60,15 @@ namespace Framming.Controllers
 
             return View();
         }
+        public ActionResult Alterar_cinema()
+        {
+
+            return View();
+        }
+        public ActionResult Usuarios()
+        {
+
+            return View();
+        }
     }
 }
