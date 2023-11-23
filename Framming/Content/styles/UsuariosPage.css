@@ -699,6 +699,45 @@ body {
     border-top: solid 4px #F66;
 }
 
+.inner-div {
+    width: 100%;
+    height: 519px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-left: -55px;
+    margin-top: 2px;
+  
+}
+    .inner-div::-webkit-scrollbar {
+        width: 12px;
+   
+    }
+
+    .inner-div::-webkit-scrollbar-thumb {
+        background-color: #ABABAB;
+        border-radius: 81px;
+      
+    }
+
+
+
+.lista_usuarios {
+    width: 91.5%;
+    height: 92px;
+    background-color: aqua;
+    margin-top: 16px;
+    margin-left: 76px;
+}
+.line-users {
+    width: 91.5%;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 81px;
+    margin-left: 74px;
+    background: aquamarine;
+    margin-top: 11px;
+}
+
 @media screen and (min-width:961px) {
     #foto_cadastro_func {
         grid-column: 12;
