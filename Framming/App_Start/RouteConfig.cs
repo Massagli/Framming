@@ -16,7 +16,7 @@ namespace Framming
             routes.MapRoute(
                 name: "Default",
                 url: "{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "administrador", id = UrlParameter.Optional }
             );
         }
     }
