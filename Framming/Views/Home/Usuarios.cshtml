@@ -65,24 +65,36 @@
             <div class="container_main">
                 <center>
                     <div class="rotulos_usuarios">
-                        <p class="beatriz">Usuário</p>
-                        <p class="beatriz">Data/Postagem</p>
-                        <p class="beatriz">Denúncias</p>
+                        <p class="beatriz">Nome</p>
+                        <p class="beatriz">Usúario</p>
+                        <p class="beatriz">Email</p>
                         <div class="gap"></div>
                     </div>
 
                     <div class="inner-div">
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
+                        <div class="lista_usuarios">
+
+                        </div>
                         <div class="line-users"></div>
                         <div class="lista_usuarios"></div>
                         <div class="line-users"></div>
@@ -98,13 +110,52 @@
                         <div class="line-users"></div>
 
 
+                        <script>
+                            const listaUsuariosDiv = document.querySelector(".lista_usuarios");
 
-                        <!-- Adicione mais conteúdo conforme necessário -->
+                            fetch("https://framming-api.onrender.com/users")
+                                .then(res => res.json())
+                                .then(data => {
+                                    data.forEach(user => {
+                                        const nomeUsuario = user.nomeUsuario;
+                                        const nickUsuario = user.nickUsuario;
+                                        const emailUsuario = user.emailUsuario;
+
+                                        const divUsuario = document.createElement('div');
+                                        divUsuario.classList.add("nome_usuario");
+
+                                        // Adiciona classes específicas para nomeUsuario e nickUsuario
+                                        const nomeUsuarioClass = "nome_usuario_nome";
+                                        const nickUsuarioClass = "nome_usuario_nick";
+                                        const emailUsuarioClass = "nome_usuario_email";
+
+                                        divUsuario.innerHTML = `<p class="${nomeUsuarioClass}">${nomeUsuario}</p><p class="${nickUsuarioClass}">${nickUsuario}</p><p class="${emailUsuarioClass}">${emailUsuario }</p>`;
+
+                                        listaUsuariosDiv.appendChild(divUsuario);
+                                    });
+                                })
+                                .catch(error => console.error(error));
+                        </script>
+
+                        <script>
+                            const res = document.querySelector(".res")
+
+                            fetch("https://framming-api.onrender.com/users").then(resposta => {
+                                return resposta.json()
+                            }).then(corpo => {
+                                console.log(corpo[0])
+                                res.innerHTML = `${corpo[0]}`
+                            })
+                        </script>
+                       
                     </div>
 
                 </center>
-                </div>
             </div>
+
+       
+
+        </div>
 
 
         </main>
