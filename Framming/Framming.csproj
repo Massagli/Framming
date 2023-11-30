@@ -132,6 +132,7 @@
     <Content Include="Content\styles\cadfuncPage.css" />
     <Content Include="Content\styles\UsuariosPage.css" />
     <Content Include="Content\styles\verpostPage.css" />
+    <Content Include="Scripts\adm.js" />
     <Content Include="Scripts\calendar.js" />
     <Content Include="Views\Home\cad_func.cshtml" />
     <Content Include="Views\Home\administrador.cshtml" />

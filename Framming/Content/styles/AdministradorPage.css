@@ -740,7 +740,53 @@ body {
     height: 315px;
     background: #F3AEAE;
     border-radius: 28px;
+    Overflow-y: auto;
 }
+
+    .favorite::-webkit-scrollbar-track {
+        //background: #F66; 
+    }
+
+.favorite::-webkit-scrollbar-thumb {
+    background-color: #F66; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid orange; /* creates padding around scroll thumb */
+}
+
+.favorite h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 22px;
+    background: #F3AEAE;
+    border-radius: 28px;
+    text-align:center;
+
+}
+
+.img_movie{
+    width:50px;
+    margin-right:20px;
+}
+
+.container_favorite {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: flex-start;
+    padding: 15px;
+
+
+}
+
+.name_movie {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+
 
 
 
