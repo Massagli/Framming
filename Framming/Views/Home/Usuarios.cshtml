@@ -73,6 +73,13 @@
 
                     <div class="inner-div">
                         <div class="lista_usuarios">
+                            @*<button class="excluir_usu"><img src="~/Content/images/icon_excluir.png"</button>*@
+
+                        </div>
+                        <div class="line-users"></div>
+                     
+                        <div class="lista_usuarios">
+                            @*<button class="excluir_usu"><img src="~/Content/images/icon_excluir.png"></button>*@
 
                         </div>
                         <div class="line-users"></div>
@@ -92,22 +99,20 @@
 
                         </div>
                         <div class="line-users"></div>
-                        <div class="lista_usuarios">
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
+                        <div class="lista_usuarios"></div>
+                        <div class="line-users"></div>
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
+
 
 
                         <script>
@@ -117,6 +122,7 @@
                                 .then(res => res.json())
                                 .then(data => {
                                     data.forEach(user => {
+                                        const idUsuario = user.idUsuario;
                                         const nomeUsuario = user.nomeUsuario;
                                         const nickUsuario = user.nickUsuario;
                                         const emailUsuario = user.emailUsuario;
@@ -124,19 +130,46 @@
                                         const divUsuario = document.createElement('div');
                                         divUsuario.classList.add("nome_usuario");
 
-                                        // Adiciona classes específicas para nomeUsuario e nickUsuario
+                                        // Adiciona classes específicas para nomeUsuario, nickUsuario e emailUsuario
                                         const nomeUsuarioClass = "nome_usuario_nome";
                                         const nickUsuarioClass = "nome_usuario_nick";
                                         const emailUsuarioClass = "nome_usuario_email";
+                                        const excluirUsuarioClass = "excluir_usu";
 
-                                        divUsuario.innerHTML = `<p class="${nomeUsuarioClass}">${nomeUsuario}</p><p class="${nickUsuarioClass}">${nickUsuario}</p><p class="${emailUsuarioClass}">${emailUsuario }</p>`;
+                                        divUsuario.innerHTML = `
+                                            <p class="${nomeUsuarioClass}">${nomeUsuario}</p>
+                                            <p class="${nickUsuarioClass}">${nickUsuario}</p>
+                                            <p class="${emailUsuarioClass}" data-id="${idUsuario}">${emailUsuario}</p>
+                                            <button class="${excluirUsuarioClass}" onclick="excluirUsuario(${idUsuario})">Excluir</button>
+                                        `;
 
                                         listaUsuariosDiv.appendChild(divUsuario);
                                     });
                                 })
                                 .catch(error => console.error(error));
-                        </script>
 
+                            function excluirUsuario(id) {
+                                // Enviar uma requisição para excluir o usuário com o id fornecido da API
+                                fetch(`https://framming-api.onrender.com/users/${id}`, {
+                                    method: 'DELETE',
+                                })
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            throw new Error('Erro ao excluir usuário');
+                                        }
+                                        return response.json();
+                                    })
+                                    .then(data => {
+                                        console.log(`Usuário com id ${id} foi excluído.`);
+                                        // Remover visualmente o usuário excluído da lista (opcional)
+                                        const usuarioParaExcluir = document.querySelector(`.${nomeUsuarioClass}[data-id="${id}"]`);
+                                        if (usuarioParaExcluir) {
+                                            usuarioParaExcluir.parentElement.remove();
+                                        }
+                                    })
+                                    .catch(error => console.error(error));
+                            }
+                        </script>
                         <script>
                             const res = document.querySelector(".res")
 
@@ -147,7 +180,7 @@
                                 res.innerHTML = `${corpo[0]}`
                             })
                         </script>
-                       
+
                     </div>
 
                 </center>
