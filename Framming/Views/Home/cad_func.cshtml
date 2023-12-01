@@ -102,35 +102,35 @@
                 <button onclick="atualizarDiv()" id="cadastre_func">Cadastrar</button>
                 <script>
                     function atualizarDiv() {
-                     
+
                         atualizarCampo('nome_func', 'codigo_nome_result', 'codigo_nome_p');
 
-                     
+
                         atualizarCampo('email_func', 'codigo_email_result', 'codigo_email_p');
 
-                     
+
                         atualizarCampo('senha_func', 'codigo_senha_result', 'codigo_senha_p');
 
                         atualizarCampo('codigo_func', 'codigo_func_result', 'codigo_func_p');
                     }
 
                     function atualizarCampo(idCampo, idDivResultado, idParagrafo) {
-                      
+
                         var valorInput = document.getElementById(idCampo).value;
 
                         var novoParagrafo = document.createElement('p');
 
-          
+
                         novoParagrafo.textContent = valorInput;
 
-           
+
                         var divResultado = document.getElementById(idDivResultado);
 
-                     
+
                         divResultado.innerHTML = '';
                         divResultado.appendChild(novoParagrafo);
 
-           
+
                         document.getElementById(idCampo).value = '';
                     }
                 </script>
@@ -141,26 +141,79 @@
                     <img src="~/Content/images/foto_cadastro_func.png" id="imagePreview" />
                 </button>
 
+
                 @section scripts {
                     <script>
-                        function openFileExplorer() {
-                            document.getElementById('fileInput').click();
+                        function registrarUsuario() {
+                            const name = document.getElementById("nome_func").value;
+                            const username = document.getElementById("codigo_func").value;
+                            const email = document.getElementById("email_func").value;
+                            const password = document.getElementById("senha_func").value;
+                            const userType = "fun";  // Preencha com o valor correto
+
+                            const dadosParaEnviar = {
+                                name,
+                                username,
+                                email,
+                                password,
+                                userType
+                            };
+
+                            // Enviar dados para a API de registro de usuário
+                            fetch('https://framming-api.onrender.com/users/register', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(dadosParaEnviar)
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Usuário registrado com sucesso:', data);
+
+                                    // Agora, enviar dados para a API do banco de dados
+                                    const dadosParaBanco = {
+                                        // Adicione outros campos aqui conforme necessário
+                                        name,
+                                        email
+                                    };
+
+                                    fetch('https://sua-api-de-banco-de-dados.com/endpoint', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(dadosParaBanco)
+                                    })
+                                        .then(response => response.json())
+                                        .then(dataBanco => {
+                                            console.log('Dados enviados para o banco com sucesso:', dataBanco);
+                                            // Lide com a resposta da API do banco conforme necessário
+                                        })
+                                        .catch(errorBanco => {
+                                            console.error('Erro ao enviar dados para o banco:', errorBanco);
+                                            // Lide com erros de envio para o banco
+                                        });
+                                })
+                                .catch(error => {
+                                    console.error('Erro ao registrar usuário:', error);
+                                    // Lide com erros de registro
+                                });
                         }
-
-                        document.getElementById('fileInput').addEventListener('change', function () {
-                            const file = this.files[0];
-
-                            if (file) {
-                                const reader = new FileReader();
-
-                                reader.onload = function (event) {
-                                    document.getElementById('foto_codigo_func','imagePreview').setAttribute('src', event.target.result);
-                                };
-
-                                reader.readAsDataURL(file);
-                            }
-                        });
                     </script>
+
+                    <script>
+                        const res = document.querySelector(".res")
+
+                        fetch("https://framming-api.onrender.com/users").then(resposta => {
+                            return resposta.json()
+                        }).then(corpo => {
+                            console.log(corpo[0])
+                            res.innerHTML = `${corpo[0]}`
+                        })
+                    </script>
+
+
 
 
 
