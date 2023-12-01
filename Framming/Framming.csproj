@@ -130,6 +130,8 @@
     <Content Include="Content\styles\Cadcinema.css" />
     <Content Include="Content\styles\cadfuncaltPage.css" />
     <Content Include="Content\styles\cadfuncPage.css" />
+    <Content Include="Content\styles\PesquisacinemaPage.css" />
+    <Content Include="Content\styles\PesquisafuncPage.css" />
     <Content Include="Content\styles\UsuariosPage.css" />
     <Content Include="Content\styles\verpostPage.css" />
     <Content Include="Scripts\adm.js" />
@@ -139,6 +141,8 @@
     <Content Include="Views\Home\alterar_cad.cshtml" />
     <Content Include="Views\Home\Cad_cinema.cshtml" />
     <Content Include="Views\Home\Alterar_cinema.cshtml" />
+    <Content Include="Views\Home\pesquisacinema.cshtml" />
+    <Content Include="Views\Home\pesquisafunc.cshtml" />
     <None Include="Views\Home\Register.cshtml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

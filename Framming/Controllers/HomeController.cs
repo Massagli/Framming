@@ -70,5 +70,15 @@ namespace Framming.Controllers
 
             return View();
         }
+        public ActionResult pesquisacinema()
+        {
+
+            return View();
+        }
+        public ActionResult pesquisafunc()
+        {
+
+            return View();
+        }
     }
 }

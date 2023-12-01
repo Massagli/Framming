@@ -159,7 +159,7 @@
                                 userType
                             };
 
-                            // Enviar dados para a API de registro de usuário
+             
                             fetch('https://framming-api.onrender.com/users/register', {
                                 method: 'POST',
                                 headers: {
@@ -171,14 +171,13 @@
                                 .then(data => {
                                     console.log('Usuário registrado com sucesso:', data);
 
-                                    // Agora, enviar dados para a API do banco de dados
                                     const dadosParaBanco = {
-                                        // Adicione outros campos aqui conforme necessário
+                                 
                                         name,
                                         email
                                     };
 
-                                    fetch('https://sua-api-de-banco-de-dados.com/endpoint', {
+                                    fetch('https://framming-api.onrender.com/users/register', {
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json'
@@ -188,16 +187,16 @@
                                         .then(response => response.json())
                                         .then(dataBanco => {
                                             console.log('Dados enviados para o banco com sucesso:', dataBanco);
-                                            // Lide com a resposta da API do banco conforme necessário
+                                       
                                         })
                                         .catch(errorBanco => {
                                             console.error('Erro ao enviar dados para o banco:', errorBanco);
-                                            // Lide com erros de envio para o banco
+                                        
                                         });
                                 })
                                 .catch(error => {
                                     console.error('Erro ao registrar usuário:', error);
-                                    // Lide com erros de registro
+                   
                                 });
                         }
                     </script>
