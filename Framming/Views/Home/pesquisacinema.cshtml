@@ -4,7 +4,8 @@
 
 }
 
-<body>
+
+<body onload="dados()">
     <main>
         <div class="container_pesquisa">
             <button id="button_home">
@@ -29,8 +30,8 @@
             </div>
 
             <div id="divBusca">
-                <input type="text" id="txtBusca" img src="~/Content/images/lupapesquisa.png">
-                <img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar">
+                <input type="text" id="txtBusca" >
+                <button onclick="pesquisar()"><img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar"></button>
             </div>
         </div>
 
@@ -66,52 +67,110 @@
                 <button class="cadastrar_novo_cinema">Cadastrar novo Cinema</button>
                 <center>
                     <div class="rotulos_usuarios">
-                        <p class="beatriz">Nome</p>
-                        <p class="beatriz">Usúario</p>
-                        <p class="beatriz">Email</p>
+                        <p class="rotulo">Nome</p>
+                        <p class="rotulo">Salas</p>
+                        <p class="rotulo">codigo</p>
                         <div class="gap"></div>
                     </div>
 
-                    <div class="inner-div">
-                        <div class="lista_usuarios">
-                     
+                    <div class="inner-div" id="inner">
 
-                        </div>
-                        <div class="line-users"></div>
+                        <script>
+                            function dados() {
+                                var divRes = document.getElementById("inner")
+                                fetch("https://framming-api.onrender.com/cinema").then(resposta => {
+                                    return resposta.json()
+                                }).then(corpo => {
 
-                        <div class="lista_usuarios">
-                        
+                                    console.log(corpo)
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios">
+                                    for (pos = 0; pos <= corpo.length; pos++) {
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios">
+                                        var nameCinema = document.createElement("p")
+                                        var room = document.createElement("p")
+                                        var code = document.createElement("p")
+                                        var container = document.createElement("div")
+                                        var gap = document.createElement("div")
+                                        var line = document.createElement("hr")
+                                        divRes.appendChild(container)
+                                        container.appendChild(nameCinema)
+                                        nameCinema.innerHTML = corpo[pos].nomeCinema
+                                        container.appendChild(room)
+                                        room.innerHTML = corpo[pos].qtdSala
+                                        container.appendChild(code)
+                                        code.innerHTML = corpo[pos].tokenCinema
+                                        container.appendChild(gap)
+                                        divRes.appendChild(line)
+                                        line.className = "line"
+                                        gap.className = "gap"
+                                        container.className = "lista_cinema"
+                                        nameCinema.className = "resultado_name"
+                                        room.className = "resultado"
+                                        code.className = "resultado"
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios">
+                                    }
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios">
 
-                        </div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
-                        <div class="lista_usuarios"></div>
-                        <div class="line-users"></div>
+
+                                    console.log(corpo)
+                                })
+                            }
+
+                            function remove() {
+                                let listaApag = document.querySelectorAll(".lista_cinema")
+                                let linhaApag = document.querySelectorAll(".line")
+
+                                if (listaApag) {
+                                    listaApag.forEach(function (elemento) {
+                                        elemento.remove()
+                                    })
+                                    linhaApag.forEach(function (elemento) {
+                                        elemento.remove()
+                                    })
+                                }
+                            }
+                            
+
+                            function pesquisar() {
+                                remove()
+                                let string = document.getElementById("txtBusca").value
+                                var divRes = document.getElementById("inner")
+
+                                fetch(`https://framming-api.onrender.com/cinema/${string}` ).then(resposta => {
+                                    return resposta.json()
+                                }).then(corpo => {
+
+                                    console.log(corpo)
+
+                                    var nameCinema = document.createElement("p")
+                                    var room = document.createElement("p")
+                                    var code = document.createElement("p")
+                                    var container = document.createElement("div")
+                                    var gap = document.createElement("div")
+                                    var line = document.createElement("hr")
+                                    divRes.appendChild(container)
+                                    container.appendChild(nameCinema)
+                                    nameCinema.innerHTML = corpo.nomeCinema
+                                    container.appendChild(room)
+                                    room.innerHTML = corpo.qtdSala
+                                    container.appendChild(code)
+                                    code.innerHTML = corpo.tokenCinema
+                                    container.appendChild(gap)
+                                    divRes.appendChild(line)
+                                    line.className = "line"
+                                    gap.className = "gap"
+                                    container.className = "lista_cinema"
+                                    nameCinema.className = "resultado_name"
+                                    room.className = "resultado"
+                                    code.className = "resultado"
+                                })
+                            }
+
+
+
+
+                        </script>
+
 
 
 
