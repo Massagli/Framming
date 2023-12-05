@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Página Inicial";
+    ViewBag.Style = "FuncionarioPage.css";
+    ViewBag.Script = "calendar.js";
+}
+
+@section scripts {
+
+    <script src="~/Scripts/calendar.js"></script>
+
+
+}
+
+
+
+<body>
+    <main>
+        <div class="container_pesquisa">
+            <button id="button_home">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_home.png">
+                </a>
+            </button>
+
+            <button id="button_notificacao">
+                <a href="ferqyfq.html">
+                    <img src="~/Content/images/icon_notificacao.png">
+                </a>
+
+            </button>
+
+            <div id="div_identificacao">
+                <img src="~/Content/images/Chagasperfil.png">
+                <p>Beatriz Chagas</p>
+                <div id="div_indifica_role">
+                    <p>Linda</p>
+                </div>
+            </div>
+
+            <div id="divBusca">
+                <input type="text" id="txtBusca" img src="~/Content/images/lupapesquisa.png">
+                <img id="imgBusca" src="~/Content/images/lupapesquisa.png" width="30px" id="btnBusca" alt="Buscar">
+            </div>
+        </div>
+
+        <div class="container_menu_content">
+            <div class="container_menu">
+                <nav class="menu">
+                    <img id="framming_logo_menu" src="~/Content/images/framminglogo.png" />
+                    <ul>
+                        <div class="menu_container">
+                            <button id="button_cliente_menu"><li><a href="ferqyfq.html"><img src="~/Content/images/cinema.png"></a></li></button>    
+            </div>
+            </ul>
+            <ul>
+                <div class="buttons_sair_configuracao">
+                    <button id="button_sair_menu">
+                <li><a href="#"><img src="~/Content/images/icon_saida.png"></a></li></button>
+                <button id="button_configuracao_menu">
+                <li><a href="#"><img src="~/Content/images/configuracao.png"></a></li></button>
+        </div>
+        </ul>
+        </nav>
+
+        </div>
+        <div class="container_content">
+            <div class="presentation">
+                <div class="introduction">
+                    <span><h1>Bom dia, CineMark Paulista <h3>O que quer fazer?</h3></h1></span>
+                    <img src="~/Content/images/movie.png" />
+                </div>
+                <div class="calendar_container">
+
+
+
+                    <div class="calendar">
+                        <div class="header">
+
+                            <div class="btns">
+                                <div class="btn today-btn">
+                                    <svg class="svg-icon_arrow" viewBox="0 0 20 20">
+                                        <path fill="none" d="M18.807,0.337h-3.616v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337H6.731
+							v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337h-3.82c-0.474,0-0.859,0.384-0.859,0.859v17.61
+							c0,0.477,0.384,0.859,0.859,0.859h17.613c0.474,0,0.859-0.382,0.859-0.859V1.195C19.665,0.721,19.281,0.337,18.807,0.337z
+							 M17.948,17.946H2.052V4.528h15.896V17.946z"></path>
+                                    </svg>
+                                </div>
+                                <div class="btn prev-btn">
+                                    <svg class="svg-icon_arrow" viewBox="0 0 20 20">
+                                        <path fill="none" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="month"></div>
+
+                                <div class="btn next-btn">
+                                    <svg class="svg-icon_arrow" viewBox="0 0 20 20">
+                                        <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weekdays">
+                            <div class="day">Sun</div>
+                            <div class="day">Mon</div>
+                            <div class="day">Tue</div>
+                            <div class="day">Wed</div>
+                            <div class="day">Thu</div>
+                            <div class="day">Fri</div>
+                            <div class="day">Sat</div>
+                        </div>
+                        <div class="days">
+                            <!-- lets add days using js -->
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div class="functions_main">
+                
+                <div class="manager_employee">
+                    <span><img src="~/Content/images/cinema.png" width="50px" /></span>
+                    <h1>Próxima Sessão do Dia</h1>
+                    <div><h2>Filme:</h2><p>Fale Comigo</p></div>
+                    <div><h2>Sala:</h2><p>6</p></div>
+                    <div><h2>Ingressos Comprados:</h2><p>97</p></div> 
+                    <div><h2>Horário:</h2><p>19:00</p></div>
+                </div>
+                <div class="manager_publication">
+                    <span><img src="~/Content/images/poltron.png"  width="50px"/></span>
+                    <h1>Próxima Sessão do Dia</h1>
+                    <div><h2>Filme:</h2><p>Fale Comigo</p></div>
+                    <div><h2>Sala:</h2><p>8</p></div>
+                    <div><h2>Ingressos Comprados:</h2><p>203</p></div>
+                    <div><h2>Data:</h2><p>28/02/2023</p></div>
+                </div>
+                
+            </div>
+
+
+
+
+
+        </div>
+
+    </main>
+</body>
+

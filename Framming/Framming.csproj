@@ -130,6 +130,7 @@
     <Content Include="Content\styles\Cadcinema.css" />
     <Content Include="Content\styles\cadfuncaltPage.css" />
     <Content Include="Content\styles\cadfuncPage.css" />
+    <Content Include="Content\styles\FuncionarioPage.css" />
     <Content Include="Content\styles\PesquisacinemaPage.css" />
     <Content Include="Content\styles\PesquisafuncPage.css" />
     <Content Include="Content\styles\UsuariosPage.css" />
@@ -143,6 +144,7 @@
     <Content Include="Views\Home\Alterar_cinema.cshtml" />
     <Content Include="Views\Home\pesquisacinema.cshtml" />
     <Content Include="Views\Home\pesquisafunc.cshtml" />
+    <Content Include="Views\Home\funcionario.cshtml" />
     <None Include="Views\Home\Register.cshtml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

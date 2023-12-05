@@ -80,5 +80,11 @@ namespace Framming.Controllers
 
             return View();
         }
+        public ActionResult funcionario()
+        {
+
+            return View();
+        }
+
     }
 }
